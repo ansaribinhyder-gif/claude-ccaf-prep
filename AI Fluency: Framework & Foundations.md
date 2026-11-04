@@ -26,8 +26,8 @@ Note : Augmentation and Agency takes more advantage
 
 Three pillars made it possible
 1. Algorithms
-2. Data
-3. Computations
+2. Data explosion
+3. Computating Power
 
 # Pre Training:
 <img width="1368" height="705" alt="image" src="https://github.com/user-attachments/assets/db2432d4-d430-412b-9d19-675ebf8159cc" />
@@ -39,3 +39,5 @@ Three pillars made it possible
 
 <img width="1406" height="695" alt="image" src="https://github.com/user-attachments/assets/208f682c-f7b7-40b8-9ccf-13c736469d8d" />
 
+# Deployment
+Users provide prompts,  and the model generates responses based on the prompts and patterns it learned during training
