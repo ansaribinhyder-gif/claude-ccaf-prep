@@ -14,7 +14,11 @@ Note : Augmentation and Agency takes more advantage
 
 
 # Four D: 
-1. Delegation 
+1. Delegation
+2. Description
+3. Discrement
+4. Dilligence
+
 
 # Generative AI :
 1. AI system that can create new content rather than analysinf existing data
