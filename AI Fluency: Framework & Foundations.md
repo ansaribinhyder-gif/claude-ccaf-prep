@@ -62,6 +62,27 @@ Delegation Involves three key elements
 
 It is not about passing over something and calling it a day. Its about understanding the full workflow. 
 
+Question:
+1. What exactly we trying to solve?
+2. What does success look like?
+3. What kind of thinking and work is needed to get there?
+4. AI Fluency begins with and depends on you expertise?
+
+# Project for Delegation - Plan
+1. Create a set of study materials for a topic you want to master - Topic : I want to create a Study Material for ATE Semiconductor Learning
+  1. What specific skills, knowledge, or AI capabilities are needed?
+     Skills: ATE machine Experience
+     Knowledge: Electronics Fundamental
+     AI : RAG or AI model to process all the documents as well as Online Sources
+  2. Which parts would benefit from uniquely human strengths?
+     Asking question as per understanding from the Material
+  3. Which parts could leverage AI capabilities well?
+     Searching through and find the exact answer for the questions
+  4. Where might collaboration have the most impact?
+     During Interaction Via chat
+
+
+
 
 
 
