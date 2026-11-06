@@ -82,6 +82,14 @@ Question:
      During Interaction Via chat
 
 
+# Product Description
+1. Clearly Describe what you want?
+2. Context, Format,Audience, Style and other Constraints
+3. Give AI the information it needs to deliver what you are actually looking for not just assuming what you want
+
+# Prompt Engineering
+<img width="1798" height="951" alt="image" src="https://github.com/user-attachments/assets/c24d0e8e-eb49-42d4-9ba0-b745c2f148e7" />
+
 
 
 
