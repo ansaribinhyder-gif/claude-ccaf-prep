@@ -90,6 +90,19 @@ Question:
 # Prompt Engineering
 <img width="1798" height="951" alt="image" src="https://github.com/user-attachments/assets/c24d0e8e-eb49-42d4-9ba0-b745c2f148e7" />
 
+# Product Discernment
+1. Factually accurate?
+2. Appropriate to audience and purpose?
+3. Coherent and well structured?
+4. Does it meet my requirements?
+5. Does it add value?
+
+
+# Diligence:
+Ensures our AI integration are responsible through thoughtful selection of Model
+
+
+
 
 
 
