@@ -1,0 +1,11 @@
+[
+  {
+    "task": "Write a Python function that validates an AWS IAM role ARN format and returns True if valid, False otherwise. The ARN should follow the pattern: arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME"
+  },
+  {
+    "task": "Create a JSON object that represents an AWS S3 bucket policy allowing public read access to all objects in the bucket named 'my-public-bucket'"
+  },
+  {
+    "task": "Write a regular expression that matches valid AWS EC2 security group IDs. Security group IDs follow the format: sg- followed by 8 or 17 hexadecimal characters"
+  }
+]

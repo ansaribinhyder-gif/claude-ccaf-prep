@@ -1,6 +1,6 @@
 # Typical RAG Flow
 
-![alt text](image-2.png)
+![alt text](./archive/image-2.png)
 
 # Chunking Strategies
 <h2> Size Based </h2>
@@ -19,10 +19,16 @@
 
 # Text Embeddings
 
-![alt text](image-3.png)
+![alt text](./archive/image-3.png)
 
-![alt text](image-4.png)
+![alt text](./archive/image-4.png)
 
 
+# General Embeddings
 
+![alt text](./archive/image_rag.png)
+
+# How similarity Works
+
+![alt text](./archive/image_cosine.png)
 
