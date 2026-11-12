@@ -1,11 +1,17 @@
 [
   {
-    "task": "Write a Python function that validates an AWS IAM role ARN format and returns True if valid, False otherwise. The ARN should follow the pattern: arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME"
+    "task": "Parse an AWS CloudWatch log entry and extract the timestamp, log level, and message",
+    "format": "Regex",
+    "solution_criteria": "Regex pattern should correctly capture timestamp in ISO 8601 format, log level (INFO, ERROR, WARN, DEBUG), and the remaining message content from a standard CloudWatch log line"
   },
   {
-    "task": "Create a JSON object that represents an AWS S3 bucket policy allowing public read access to all objects in the bucket named 'my-public-bucket'"
+    "task": "Create a JSON configuration object for an AWS Lambda function that specifies runtime as Python 3.11, timeout of 60 seconds, memory of 512 MB, and environment variables for DATABASE_URL and API_KEY",
+    "format": "JSON",
+    "solution_criteria": "JSON object should have valid syntax, include all specified properties (Runtime, Timeout, MemorySize, Environment.Variables), and follow AWS Lambda configuration structure"
   },
   {
-    "task": "Write a regular expression that matches valid AWS EC2 security group IDs. Security group IDs follow the format: sg- followed by 8 or 17 hexadecimal characters"
+    "task": "Write a Python function that takes an AWS S3 bucket name and key as parameters and returns True if the object exists, False otherwise, using boto3",
+    "format": "Python",
+    "solution_criteria": "Function should use boto3 S3 client, handle the HeadObject API call appropriately, catch ClientError exception for non-existent objects, and return a boolean value"
   }
 ]

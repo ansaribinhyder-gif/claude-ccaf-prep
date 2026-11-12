@@ -1,0 +1,53 @@
+[
+  {
+    "output": "```json\n[\n  \"Climate change mitigation strategies\",\n  \"Carbon pricing mechanisms\",\n  \"Renewable energy subsidies\",\n  \"Greenhouse gas emissions reduction\",\n  \"Clean technology sectors\",\n  \"International coordination frameworks\",\n  \"Burden-sharing between developed and developing nations\",\n  \"Carbon capture technology\",\n  \"Soil carbon sequestration\",\n  \"Energy costs\",\n  \"Land availability\",\n  \"Early policy intervention\",\n  \"Long-term mitigation costs\",\n  \"Adaptation expenses\",\n  \"Vulnerable regions\",\n  \"Climate science projections\",\n  \"Macroeconomic impacts\",\n  \"Social equity considerations\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Climate change mitigation strategies increasingly require integrated approaches that bridge natural sciences, economics, and governance. Recent modeling indicates that carbon pricing mechanisms, when coupled with renewable energy subsidies, can reduce greenhouse gas emissions by 45% while simultaneously stimulating job creation in clean technology sectors. However, the effectiveness of such policies depends critically on international coordination frameworks and equitable burden-sharing among developed and developing nations. Simultaneously, advances in carbon capture technology and soil carbon sequestration present complementary pathways, though their scalability remains constrained by energy costs and land availability. Economic analyses suggest that early policy intervention reduces long-term mitigation costs by 30%, while delayed action increases adaptation expenses in vulnerable regions, creating complex tradeoffs between climate science projections, macroeconomic impacts, and social equity considerations."
+      },
+      "solution_criteria": [
+        "Extracts all distinct subject areas including climate science, economics, policy/governance, and technology",
+        "Returns results as a JSON array of strings with no duplicates",
+        "Identifies both primary topics and interdisciplinary intersection points covered in the passage"
+      ],
+      "task_description": "Extract topics of a passage of text from schlorly article into JSON array of strings",
+      "scenario": "Testing with a multidisciplinary scholarly article containing mixed topics (e.g., climate science intersecting with economics and policy) to verify accurate extraction of all distinct subject areas"
+    },
+    "score": 8,
+    "reasoning": "The solution meets all mandatory requirements: it returns valid JSON with no duplicates, extracts topics from all four required domains (climate science, economics, policy, technology), and identifies interdisciplinary intersections. The extraction is thorough and demonstrates good understanding of the passage's content. However, there are minor issues with topic granularity and some redundancy that could be refined. The solution performs well but has room for optimization in topic selection and abstraction level."
+  },
+  {
+    "output": "```json\n[\n  \"CRISPR-Cas9 gene editing\",\n  \"Hemoglobinopathies\",\n  \"\u03b2-globin locus\",\n  \"In vivo modifications\",\n  \"sgRNA-directed endonuclease activity\",\n  \"Double-strand breaks\",\n  \"Homology-directed repair\",\n  \"Donor DNA templates\",\n  \"Therapeutic alleles\",\n  \"Lentiviral vector-mediated delivery\",\n  \"SpCas9\",\n  \"Autologous CD34+ hematopoietic stem cells\",\n  \"Engraftment\",\n  \"Off-target mutagenesis\",\n  \"Whole-genome sequencing\",\n  \"Immunogenicity\",\n  \"Bacterial Cas9 proteins\",\n  \"Cardiomyocytes\",\n  \"Editing efficiency\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in CRISPR-Cas9 gene editing have demonstrated remarkable efficacy in correcting pathogenic variants associated with hemoglobinopathies through precise in vivo modifications of the \u03b2-globin locus. The mechanism involves sgRNA-directed endonuclease activity that generates double-strand breaks at target sequences, followed by homology-directed repair utilizing exogenous donor DNA templates containing therapeutic alleles. Clinical trials employing lentiviral vector-mediated delivery of SpCas9 in autologous CD34+ hematopoietic stem cells have yielded sustained hematologic improvements, with engraftment rates exceeding 95% and minimal off-target mutagenesis as assessed through whole-genome sequencing. However, immunogenicity concerns regarding bacterial Cas9 proteins and the challenge of achieving sufficient editing efficiency in post-mitotic cardiomyocytes remain significant obstacles to broader therapeutic applications."
+      },
+      "solution_criteria": [
+        "Extracts all major scientific topics despite specialized terminology (e.g., CRISPR-Cas9, hemoglobinopathies, homology-directed repair, lentiviral vectors)",
+        "Organizes extracted topics into a valid JSON array of strings",
+        "Avoids including non-topic content such as specific numerical values or descriptive phrases"
+      ],
+      "task_description": "Extract topics of a passage of text from schlorly article into JSON array of strings",
+      "scenario": "Testing with a highly specialized technical article using domain-specific jargon (e.g., quantum physics or molecular biology) to ensure the prompt correctly identifies niche topics despite unfamiliar terminology"
+    },
+    "score": 8,
+    "reasoning": "The solution meets all three mandatory criteria: it extracts major scientific topics despite specialized terminology, organizes them into a valid JSON array of strings, and avoids numerical values. The extraction is thorough and captures the essential concepts from the passage. However, there is a minor issue with topic selection granularity - some entries like 'In vivo modifications' and 'Autologous CD34+ hematopoietic stem cells' blur the line between topics and descriptive phrases. Despite this, these are still legitimate topic identifiers within the scientific context. The solution demonstrates strong understanding of the source material and appropriate topic extraction for a scholarly article."
+  },
+  {
+    "output": "```json\n[\n  \"Mitochondrial dysfunction\",\n  \"Neurodegenerative disease progression\",\n  \"Mitochondria\",\n  \"ATP production\",\n  \"Oxidative phosphorylation\",\n  \"Alzheimer's disease\",\n  \"Neuronal energy availability\",\n  \"Cellular apoptosis\",\n  \"Mitochondrial membrane potential\",\n  \"Cognitive decline\",\n  \"Targeted interventions\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study examines the role of mitochondrial dysfunction in neurodegenerative disease progression. Mitochondria, the cellular powerhouses responsible for ATP production, demonstrate impaired oxidative phosphorylation in Alzheimer's disease patients, leading to reduced energy availability in neurons and subsequent cellular apoptosis. Our findings indicate that restoring mitochondrial membrane potential through targeted interventions may slow cognitive decline."
+      },
+      "solution_criteria": [
+        "Extracts only the primary topics actually present in the passage without inventing additional ones",
+        "Returns results as a JSON array of strings",
+        "Identifies the core scholarly topics: mitochondrial dysfunction, neurodegenerative disease, and/or Alzheimer's disease"
+      ],
+      "task_description": "Extract topics of a passage of text from schlorly article into JSON array of strings",
+      "scenario": "Testing with a brief, single-topic scholarly passage to verify the prompt handles minimal input correctly and doesn't hallucinate or over-segment topics that aren't present"
+    },
+    "score": 8,
+    "reasoning": "The solution successfully meets all mandatory criteria: it returns valid JSON array of strings, extracts only topics present in the passage without invention, and identifies the three core scholarly topics (mitochondrial dysfunction, neurodegenerative disease progression, and Alzheimer's disease). However, there are minor secondary deficiencies in topic selection. Some entries like 'Mitochondria' are subsumed by 'Mitochondrial dysfunction,' and 'Neuronal energy availability' is essentially a restatement of concepts already captured. The solution errs slightly on the side of comprehensiveness rather than focusing on primary topics, though this is a minor issue since all extracted topics are legitimately present in the text. The solution performs well overall and meets the stated criteria effectively."
+  }
+]

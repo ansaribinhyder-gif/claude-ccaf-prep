@@ -1,0 +1,230 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">8.0 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a multidisciplinary scholarly article containing mixed topics (e.g., climate science intersecting with economics and policy) to verify accurate extraction of all distinct subject areas</td>
+                <td class="prompt-inputs"><strong>content:</strong> Climate change mitigation strategies increasingly require integrated approaches that bridge natural sciences, economics, and governance. Recent modeling indicates that carbon pricing mechanisms, when coupled with renewable energy subsidies, can reduce greenhouse gas emissions by 45% while simultaneously stimulating job creation in clean technology sectors. However, the effectiveness of such policies depends critically on international coordination frameworks and equitable burden-sharing among developed and developing nations. Simultaneously, advances in carbon capture technology and soil carbon sequestration present complementary pathways, though their scalability remains constrained by energy costs and land availability. Economic analyses suggest that early policy intervention reduces long-term mitigation costs by 30%, while delayed action increases adaptation expenses in vulnerable regions, creating complex tradeoffs between climate science projections, macroeconomic impacts, and social equity considerations.</td>
+                <td class="criteria">• Extracts all distinct subject areas including climate science, economics, policy/governance, and technology<br>• Returns results as a JSON array of strings with no duplicates<br>• Identifies both primary topics and interdisciplinary intersection points covered in the passage</td>
+                <td class="output"><pre>```json
+[
+  "Climate change mitigation strategies",
+  "Carbon pricing mechanisms",
+  "Renewable energy subsidies",
+  "Greenhouse gas emissions reduction",
+  "Clean technology sectors",
+  "International coordination frameworks",
+  "Burden-sharing between developed and developing nations",
+  "Carbon capture technology",
+  "Soil carbon sequestration",
+  "Energy costs",
+  "Land availability",
+  "Early policy intervention",
+  "Long-term mitigation costs",
+  "Adaptation expenses",
+  "Vulnerable regions",
+  "Climate science projections",
+  "Macroeconomic impacts",
+  "Social equity considerations"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it returns valid JSON with no duplicates, extracts topics from all four required domains (climate science, economics, policy, technology), and identifies interdisciplinary intersections. The extraction is thorough and demonstrates good understanding of the passage's content. However, there are minor issues with topic granularity and some redundancy that could be refined. The solution performs well but has room for optimization in topic selection and abstraction level.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a highly specialized technical article using domain-specific jargon (e.g., quantum physics or molecular biology) to ensure the prompt correctly identifies niche topics despite unfamiliar terminology</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in CRISPR-Cas9 gene editing have demonstrated remarkable efficacy in correcting pathogenic variants associated with hemoglobinopathies through precise in vivo modifications of the β-globin locus. The mechanism involves sgRNA-directed endonuclease activity that generates double-strand breaks at target sequences, followed by homology-directed repair utilizing exogenous donor DNA templates containing therapeutic alleles. Clinical trials employing lentiviral vector-mediated delivery of SpCas9 in autologous CD34+ hematopoietic stem cells have yielded sustained hematologic improvements, with engraftment rates exceeding 95% and minimal off-target mutagenesis as assessed through whole-genome sequencing. However, immunogenicity concerns regarding bacterial Cas9 proteins and the challenge of achieving sufficient editing efficiency in post-mitotic cardiomyocytes remain significant obstacles to broader therapeutic applications.</td>
+                <td class="criteria">• Extracts all major scientific topics despite specialized terminology (e.g., CRISPR-Cas9, hemoglobinopathies, homology-directed repair, lentiviral vectors)<br>• Organizes extracted topics into a valid JSON array of strings<br>• Avoids including non-topic content such as specific numerical values or descriptive phrases</td>
+                <td class="output"><pre>```json
+[
+  "CRISPR-Cas9 gene editing",
+  "Hemoglobinopathies",
+  "β-globin locus",
+  "In vivo modifications",
+  "sgRNA-directed endonuclease activity",
+  "Double-strand breaks",
+  "Homology-directed repair",
+  "Donor DNA templates",
+  "Therapeutic alleles",
+  "Lentiviral vector-mediated delivery",
+  "SpCas9",
+  "Autologous CD34+ hematopoietic stem cells",
+  "Engraftment",
+  "Off-target mutagenesis",
+  "Whole-genome sequencing",
+  "Immunogenicity",
+  "Bacterial Cas9 proteins",
+  "Cardiomyocytes",
+  "Editing efficiency"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all three mandatory criteria: it extracts major scientific topics despite specialized terminology, organizes them into a valid JSON array of strings, and avoids numerical values. The extraction is thorough and captures the essential concepts from the passage. However, there is a minor issue with topic selection granularity - some entries like 'In vivo modifications' and 'Autologous CD34+ hematopoietic stem cells' blur the line between topics and descriptive phrases. Despite this, these are still legitimate topic identifiers within the scientific context. The solution demonstrates strong understanding of the source material and appropriate topic extraction for a scholarly article.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a brief, single-topic scholarly passage to verify the prompt handles minimal input correctly and doesn't hallucinate or over-segment topics that aren't present</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the role of mitochondrial dysfunction in neurodegenerative disease progression. Mitochondria, the cellular powerhouses responsible for ATP production, demonstrate impaired oxidative phosphorylation in Alzheimer's disease patients, leading to reduced energy availability in neurons and subsequent cellular apoptosis. Our findings indicate that restoring mitochondrial membrane potential through targeted interventions may slow cognitive decline.</td>
+                <td class="criteria">• Extracts only the primary topics actually present in the passage without inventing additional ones<br>• Returns results as a JSON array of strings<br>• Identifies the core scholarly topics: mitochondrial dysfunction, neurodegenerative disease, and/or Alzheimer's disease</td>
+                <td class="output"><pre>```json
+[
+  "Mitochondrial dysfunction",
+  "Neurodegenerative disease progression",
+  "Mitochondria",
+  "ATP production",
+  "Oxidative phosphorylation",
+  "Alzheimer's disease",
+  "Neuronal energy availability",
+  "Cellular apoptosis",
+  "Mitochondrial membrane potential",
+  "Cognitive decline",
+  "Targeted interventions"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution successfully meets all mandatory criteria: it returns valid JSON array of strings, extracts only topics present in the passage without invention, and identifies the three core scholarly topics (mitochondrial dysfunction, neurodegenerative disease progression, and Alzheimer's disease). However, there are minor secondary deficiencies in topic selection. Some entries like 'Mitochondria' are subsumed by 'Mitochondrial dysfunction,' and 'Neuronal energy availability' is essentially a restatement of concepts already captured. The solution errs slightly on the side of comprehensiveness rather than focusing on primary topics, though this is a minor issue since all extracted topics are legitimately present in the text. The solution performs well overall and meets the stated criteria effectively.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
